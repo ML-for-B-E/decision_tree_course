@@ -3,10 +3,10 @@
 Reference course is [FUNDAMENTALS OF MACHINE LEARNING FOR PREDICTIVE DATA ANALYTICS Algorithms, Worked Examples, and Case Studies](https://pdfslide.net/documents/fundamentals-of-machine-learning-for-this-is-an-excerpt-from-the-book-fundamentals.html?page=1) from John D. Kelleher, Brian Mac Namee & Aoife D’Arcy
 
 
-# Use a virtual env (to follow good IT practices of isolation)
+# Setup your execution environment
 We assume here a Linux environnement for the CLI.
 
-* Put yourself in `cd summer-camp-2021` 
+* Put yourself at the root of project. Depending of your current working directory, you may have to adjust `cd decision_tree_course` 
 * Run the command `python3 -m venv venv`
 * Activate the venv: `source venv/bin/activate`
 * Upgrade pip if needed `pip install --upgrade pip`
