@@ -1,12 +1,7 @@
 # README
 
-Reference course can be found here:
-https://www.r-bloggers.com/2014/09/in-depth-introduction-to-machine-learning-in-15-hours-of-expert-videos/
+Reference course is [FUNDAMENTALS OF MACHINE LEARNING FOR PREDICTIVE DATA ANALYTICS Algorithms, Worked Examples, and Case Studies](https://pdfslide.net/documents/fundamentals-of-machine-learning-for-this-is-an-excerpt-from-the-book-fundamentals.html?page=1) from John D. Kelleher, Brian Mac Namee & Aoife D’Arcy
 
-
-# Setup directory
-* Ask @BWhannou to give you access to data https://www.dropbox.com/sh/smaw3u7blio7lw8/AAAtzyTqXKNeuP3asM22p8PBa?dl=0
-* unzip the downloaded folder `data.zip` in `summer-camp-2021/cours_de_stats/`
 
 # Use a virtual env (to follow good IT practices of isolation)
 We assume here a Linux environnement for the CLI.
