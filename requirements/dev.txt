@@ -1,0 +1,9 @@
+numpy==1.19.5
+pandas
+jupyter
+ipykernel
+ipython
+-r ml.txt
+-r plot.txt
+-r lint.txt
+-r test.txt
