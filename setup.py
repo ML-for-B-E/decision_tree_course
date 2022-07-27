@@ -37,7 +37,7 @@ def filter_libraries(
     return install_requires
 
 
-package_name = Path.cwd().name
+package_name = "summer"
 python_version = "3.8.5"
 install_requires = get_install_requires()
 
