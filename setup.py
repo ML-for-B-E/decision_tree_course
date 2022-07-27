@@ -1,4 +1,3 @@
-from abc import abstractproperty
 import setuptools
 from pathlib import Path
 
