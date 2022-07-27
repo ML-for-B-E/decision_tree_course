@@ -12,7 +12,8 @@ We assume here a Linux environnement for the CLI.
 * Upgrade pip if needed `pip install --upgrade pip`
 * Install packages needed with `pip install -r requirements/dev.txt`
 * Install our package `summer` with `pip install -e .`
-* Create a jupyter kernel linked to this venv. Follow instructions here https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove. 
+* Create a jupyter kernel linked to this venv 
   - `ipython kernel install --name "venv" --user`
+  References: https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove.
 * You can now open a notebook by running `jupyter notebook --no-browser`
 * Select the kernel `venv` to run the notebook.
