@@ -10,8 +10,8 @@ CI_FILE := .github/workflows/devops-ci.yml
 _VERBOSE ?= -vvv
 _COLOR ?= --color=yes
 PYTEST := RUN_BY_PYTEST=True ${PYTHON} -m pytest ${_VERBOSE} ${_COLOR}
-TEST_PATH := nevergrad
-DEFAULT_BRANCH := pcse
+TEST_PATH := tests
+DEFAULT_BRANCH := main
 
 # Virtual env
 VENV_NAME = venv
