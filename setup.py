@@ -1,7 +1,26 @@
-import setuptools
 from pathlib import Path
 
+from setuptools import find_packages, setup
+
 SRC_DIR = "src"
+
+package_name = "summer"
+
+
+def get_long_description(filename="README.md"):
+    with open(filename, "r") as fh:
+        long_description = fh.read()
+    return long_description
+
+
+def extract_description(
+    long_description, subsection_title, subsection_indentation="## "
+):
+    for section in long_description.split(subsection_indentation):
+        if section.startswith(subsection_title):
+            paragraphs = section.split("\n")[1:]
+            return " ".join(paragraphs).strip()
+    return "Improper readme for description parsing."
 
 
 def get_install_requires():
@@ -10,49 +29,41 @@ def get_install_requires():
 
 
 def get_requirement_paths(
-    requirement_dir: Path = Path("requirements"),
-    included_names: list = ["prod"],
+    package_dir: Path = Path.cwd(),
 ):
     requirement_paths = []
-    for file_path in requirement_dir.glob("**/*.txt"):
-        if file_path.with_suffix("").name in included_names:
-            requirement_paths.append(file_path)
-        if file_path.parent.name in included_names:
-            requirement_paths.append(file_path)
+    for file_path in package_dir.glob("requirements/*.txt"):
+        requirement_paths.append(file_path)
     return requirement_paths
 
 
 def filter_libraries(
     requirement_paths,
-    operators: list = ["=", "<", ">"],
-):
+) -> list:
     install_requires = []
     for requirement_path in requirement_paths:
         libs = []
-        with open(requirement_path) as fh:
-            for lib in fh.read().split("\n"):
-                if any((operator in lib) for operator in operators):
-                    libs.append(lib)
+        with open(requirement_path) as file_handle:
+            for lib in file_handle.read().split("\n"):
+                libs.append(lib)
         install_requires.extend(libs)
     return install_requires
 
 
-package_name = "summer"
-python_version = "3.8.5"
+long_description = get_long_description()
+description = extract_description(long_description, "Description")
 install_requires = get_install_requires()
 
-setuptools.setup(
+setup(
     name=package_name,
-    version="dev",
-    author="Fondation Vallet",
+    version="0.0.1",
+    author="(c) Fondation Vallet - Benin Excellence",
     author_email="adkevinkpakpo@gmail.com",
-    packages=setuptools.find_packages(where=SRC_DIR),
+    description=description,
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    packages=find_packages(where=SRC_DIR),
     package_dir={"": SRC_DIR},
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "(c) Fondation Vallet",
-        "Operating System :: OS Independent",
-    ],
-    python_requires=f">={python_version}",
+    include_package_data=True,
     install_requires=install_requires,
 )
