@@ -9,3 +9,4 @@ flake8>=5.0.3
 scikit-learn>=0.24.2
 pytest>=6.2.4
 pip-tools>=6.6.0
+google>=3.0.0

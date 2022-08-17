@@ -18,7 +18,9 @@ attrs==22.1.0
 backcall==0.2.0
     # via ipython
 beautifulsoup4==4.11.1
-    # via nbconvert
+    # via
+    #   google
+    #   nbconvert
 black==22.6.0
     # via -r requirements/dev.in
 bleach==5.0.1
@@ -46,6 +48,8 @@ executing==0.9.1
 fastjsonschema==2.16.1
     # via nbformat
 flake8==5.0.3
+    # via -r requirements/dev.in
+google==3.0.0
     # via -r requirements/dev.in
 importlib-resources==5.9.0
     # via jsonschema
