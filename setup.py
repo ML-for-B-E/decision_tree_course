@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 SRC_DIR = "src"
 
-package_name = "summer"
+package_name = Path.cwd().name
 
 
 def get_long_description(filename="README.md"):
