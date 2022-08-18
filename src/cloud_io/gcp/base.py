@@ -5,6 +5,18 @@ import google.cloud.storage as gcs
 from cloud_io.tools.error import CloudIOError
 
 
+def download_blob(
+    blob_path: Path,
+    local_path: Path,
+    bucket_name: str,
+) -> Path:
+    local_path = Path(local_path)
+
+    blob = get_blob(blob_path, bucket_name)
+    blob.download_to_filename(local_path)
+    return local_path
+
+
 def get_blob(blob_name: Path, bucket_name: str) -> gcs.Blob:
     bucket = get_bucket(bucket_name)
     if isinstance(blob_name, Path):
