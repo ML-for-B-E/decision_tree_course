@@ -3,6 +3,7 @@ from pathlib import Path
 
 import google.cloud.storage as gcs
 from cloud_io.tools.error import CloudIOError
+from cloud_io.gcp.filesystem import prepare_filesystem
 
 
 def download_blob(
@@ -11,6 +12,9 @@ def download_blob(
     bucket_name: str,
 ) -> Path:
     local_path = Path(local_path)
+    existing_path = prepare_filesystem(local_path)
+    if existing_path is not None:
+        return existing_path
 
     blob = get_blob(blob_path, bucket_name)
     blob.download_to_filename(local_path)
