@@ -1,11 +1,11 @@
 from pathlib import Path
-from typing import Union
+from typing import Union, MutableSet
 
 from cloud_io.gcp.base import get_client
 from cloud_io.gcp.base import download_blob
 
 
-def list_remote_files(bucket_name: str, prefix: Union[Path, str] = "") -> set[Path]:
+def list_remote_files(bucket_name: str, prefix: Union[Path, str] = "") -> MutableSet[Path]:
     """List all files in a bucket given a prefix.
 
     If prefix is a Path: the prefix will be assumed to be a folder.
