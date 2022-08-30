@@ -9,7 +9,5 @@ flake8>=5.0.3
 scikit-learn>=0.24.2
 pytest>=6.2.4
 pip-tools>=6.6.0
-google-auth>=2.6.6
-google-cloud>=0.34.0
-google-cloud-storage>=2.3.0
-testing-tools
+testing-tools>=1.0.3
+cloud-io>=1.0.1
